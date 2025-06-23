@@ -5,9 +5,12 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import type { LinksFunction } from "@remix-run/node";
-
+import type { LinksFunction, LoaderFunctionArgs } from "@remix-run/node";
+import { json } from "@remix-run/node";
 import "./tailwind.css";
+import Navbar from "~/components/Navbar";
+import { tokenCookie } from "~/utils/session";
+import { apiRequest } from "~/utils/api";
 
 export const links: LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -22,6 +25,24 @@ export const links: LinksFunction = () => [
   },
 ];
 
+// Root loader: get user from token in session cookie (if exists)
+export async function loader({ request }: LoaderFunctionArgs) {
+  const cookieHeader = request.headers.get("Cookie");
+  const token = cookieHeader
+    ? (await tokenCookie.parse(cookieHeader))
+    : undefined;
+
+  let user = undefined;
+  if (token) {
+    try {
+      user = await apiRequest("/users/me", "GET", undefined, token);
+    } catch {
+      // Not authenticated or token expired
+    }
+  }
+  return json({ user });
+}
+
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
@@ -32,7 +53,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        {children}
+        <Navbar />
+        <div className="max-w-5xl mx-auto pt-8 px-4">{children}</div>
         <ScrollRestoration />
         <Scripts />
       </body>

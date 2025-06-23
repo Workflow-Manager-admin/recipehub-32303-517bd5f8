@@ -5,3 +5,17 @@
 [33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
   ➜  Local:   http://localhost:3000/
   ➜  Network: http://172.17.0.2:3000/
+10:56:19 AM [vite] (client) ✨ new dependencies optimized: @remix-run/node
+10:56:19 AM [vite] (client) ✨ optimized dependencies changed. reloading
+10:56:27 AM [vite] (client) page reload /home/kavia/workspace/code-generation/recipehub-32303-517bd5f8/recipe_frontend_workspace/recipe_frontend/app/routes/logout.tsx
+10:56:27 AM [vite] (client) page reload /home/kavia/workspace/code-generation/recipehub-32303-517bd5f8/recipe_frontend_workspace/recipe_frontend/app/routes/logout.tsx
+10:56:27 AM [vite] (client) page reload app/routes/logout.tsx
+10:56:27 AM [vite] (ssr) page reload app/routes/logout.tsx
+10:56:39 AM [vite] (client) page reload /home/kavia/workspace/code-generation/recipehub-32303-517bd5f8/recipe_frontend_workspace/recipe_frontend/app/utils/api.ts
+10:56:39 AM [vite] (client) page reload /home/kavia/workspace/code-generation/recipehub-32303-517bd5f8/recipe_frontend_workspace/recipe_frontend/app/utils/api.ts
+10:56:39 AM [vite] (client) page reload app/utils/api.ts
+10:56:39 AM [vite] (ssr) page reload app/utils/api.ts
+10:56:44 AM [vite] (client) page reload /home/kavia/workspace/code-generation/recipehub-32303-517bd5f8/recipe_frontend_workspace/recipe_frontend/app/utils/api.ts
+10:56:44 AM [vite] (client) page reload /home/kavia/workspace/code-generation/recipehub-32303-517bd5f8/recipe_frontend_workspace/recipe_frontend/app/utils/api.ts
+10:56:44 AM [vite] (client) page reload app/utils/api.ts
+10:56:44 AM [vite] (ssr) page reload app/utils/api.ts
